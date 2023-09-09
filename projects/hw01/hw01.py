@@ -15,9 +15,9 @@ def a_plus_abs_b(a, b):
     ['return h(a, b)']
     """
     if b >= 0:
-        h = _____
+        h = add
     else:
-        h = _____
+        h = sub
     return h(a, b)
 
 def two_of_three(x, y, z):
