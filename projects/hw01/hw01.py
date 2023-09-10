@@ -105,6 +105,14 @@ def t():
 
 def f():
     print(6)
+    
+""" In an if-statement, the True clause is only evaluated if True, and if it is
+False, the clause will not be called.
+Meanwhile, when we call a function, we must evaluate every operand as a 
+parameter in the function, this is why '5' and '6' are printed out on new lines
+because the function t() and f() are evaluated inside the function first, 
+regardless of c() being True of False.
+"""
 
 def hailstone(x):
     """Print the hailstone sequence starting at x and return its
