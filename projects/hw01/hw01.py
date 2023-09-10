@@ -105,7 +105,7 @@ def t():
 
 def f():
     print(6)
-    
+
 """ In an if-statement, the True clause is only evaluated if True, and if it is
 False, the clause will not be called.
 Meanwhile, when we call a function, we must evaluate every operand as a 
@@ -129,4 +129,13 @@ def hailstone(x):
     >>> a
     7
     """
-    "*** YOUR CODE HERE ***"
+    steps = 1
+    while x != 1:
+        print(x)
+        steps +=1
+        if x % 2 == 0:
+            x = x // 2
+        else:
+            x = 3*x + 1
+    print(x)
+    return steps
