@@ -54,7 +54,7 @@ def largest_factor(x):
     while b > 0:
         if x % b == 0:
             return b
-        b = b - 1
+        b -= 1
 
 def if_function(condition, true_result, false_result):
     """Return true_result if condition is a true value, and
