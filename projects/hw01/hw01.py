@@ -139,3 +139,7 @@ def hailstone(x):
             x = 3*x + 1
     print(x)
     return steps
+
+if __name__ == "__main__":
+    import doctest
+    doctest.testmod()
