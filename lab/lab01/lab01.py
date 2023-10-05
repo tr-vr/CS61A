@@ -69,7 +69,6 @@ def double_eights(n):
         if n % 10 == 8:
             n = n // 10
             if n % 10 == 8:
-                return True
-            
+                return True     
         n //= 10
     return False
