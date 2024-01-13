@@ -21,7 +21,19 @@ def roll_dice(num_rolls, dice=six_sided):
     assert type(num_rolls) == int, 'num_rolls must be an integer.'
     assert num_rolls > 0, 'Must roll at least once.'
     # BEGIN PROBLEM 1
-    "*** YOUR CODE HERE ***"
+    score = 0
+    one_rolled = False
+    while num_rolls > 0:
+        roll = dice()
+        if roll == 1:
+            one_rolled = True
+        num_rolls -= 1
+        score += roll 
+    
+    if one_rolled == True:
+        return 1
+    else:
+        return score
     # END PROBLEM 1
 
 
