@@ -83,7 +83,13 @@ def is_swap(player_score, opponent_score):
     Return whether the two scores should be swapped
     """
     # BEGIN PROBLEM 4
-    "*** YOUR CODE HERE ***"
+    pow_three = 3**(player_score + opponent_score)
+    last_digit = pow_three % 10
+    while (pow_three >= 10):
+        pow_three = pow_three // 10
+    if (last_digit == pow_three):
+        return True
+    return False
     # END PROBLEM 4
 
 
