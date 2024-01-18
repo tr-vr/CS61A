@@ -131,17 +131,19 @@ def play(strategy0, strategy1, score0=0, score1=0, dice=six_sided,
     # BEGIN PROBLEM 5
     while score0 < goal and score1 < goal:
         if who == 0:
+            feral_check0 = score0
             dice_num = strategy0(score0, score1)
-            if feral_hogs:
-                if abs(dice_num - score0) == 2:
-                    score0 += 3
             score0 += take_turn(dice_num, score1, dice)
-        elif who == 1:
-            dice_num = strategy1(score1, score0)
             if feral_hogs:
-                if abs(dice_num - score1) == 2:
-                    score1 += 3
+                if abs(dice_num - feral_check0) == 2:
+                    score0 += 3
+        elif who == 1:
+            feral_check1 = score1
+            dice_num = strategy1(score1, score0)
             score1 += take_turn(dice_num, score0, dice)
+            if feral_hogs:
+                if abs(dice_num - feral_check1) == 2:
+                    score1 += 3
         if is_swap(score0, score1):
             score0, score1 = score1, score0
         who = other(who)
