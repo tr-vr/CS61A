@@ -15,9 +15,9 @@ def a_plus_abs_b(a, b):
     ['return h(a, b)']
     """
     if b >= 0:
-        h = _____
+        h = add
     else:
-        h = _____
+        h = sub
     return h(a, b)
 
 def two_of_three(x, y, z):
@@ -38,7 +38,7 @@ def two_of_three(x, y, z):
     >>> [type(x).__name__ for x in ast.parse(inspect.getsource(two_of_three)).body[0].body]
     ['Expr', 'Return']
     """
-    return _____
+    return min(x*x+y*y, x*x+z*z, y*y+z*z)
 
 def largest_factor(x):
     """Return the largest factor of x that is smaller than x.
@@ -50,7 +50,10 @@ def largest_factor(x):
     >>> largest_factor(13) # factor is 1 since 13 is prime
     1
     """
-    "*** YOUR CODE HERE ***"
+    i = 2
+    while x % i != 0:
+        i += 1
+    return x // i
 
 def if_function(condition, true_result, false_result):
     """Return true_result if condition is a true value, and
@@ -94,13 +97,13 @@ def with_if_function():
     return if_function(c(), t(), f())
 
 def c():
-    "*** YOUR CODE HERE ***"
+    return False
 
 def t():
-    "*** YOUR CODE HERE ***"
+    print(5)
 
 def f():
-    "*** YOUR CODE HERE ***"
+    print(6)
 
 def hailstone(x):
     """Print the hailstone sequence starting at x and return its
@@ -117,4 +120,14 @@ def hailstone(x):
     >>> a
     7
     """
-    "*** YOUR CODE HERE ***"
+    a = 1
+    print(x)
+    while x != 1:
+        a += 1
+        if x % 2 == 0:
+            x = x // 2
+            print(x)
+        else:
+            x = 3*x + 1
+            print(x)
+    return a
