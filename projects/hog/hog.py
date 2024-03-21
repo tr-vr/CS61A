@@ -49,9 +49,9 @@ def free_bacon(score):
     while (calc_score > 0):
         current_num = calc_score % 10
         if (index == 0 or index % 2 == 0):
-            total += current_num
-        else:
             total -= current_num
+        else:
+            total += current_num
         index += 1
         calc_score = calc_score // 10
     return 1 + abs(total)
