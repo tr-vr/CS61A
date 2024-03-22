@@ -33,7 +33,10 @@ def product(n, f):
     >>> product(3, triple)    # 1*3 * 2*3 * 3*3
     162
     """
-    "*** YOUR CODE HERE ***"
+    sum = 1
+    for i in range(1, n+1):
+        sum *= f(i)
+    return sum
 
 def accumulate(combiner, base, n, f):
     """Return the result of combining the first n terms in a sequence and base.
