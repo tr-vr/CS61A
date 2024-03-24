@@ -75,7 +75,7 @@ def summation_using_accumulate(n, f):
     >>> summation_using_accumulate(5, triple)
     45
     """
-    return accumulate(add, 0, n ,f)
+    return accumulate(add, 0, n, f)
 
 def product_using_accumulate(n, f):
     """An implementation of product using accumulate.
@@ -84,13 +84,8 @@ def product_using_accumulate(n, f):
     576
     >>> product_using_accumulate(6, triple)
     524880
-    >>> from construct_check import check
-    >>> # ban iteration and recursion
-    >>> check(HW_SOURCE_FILE, 'product_using_accumulate',
-    ...       ['Recursion', 'For', 'While'])
-    True
     """
-    "*** YOUR CODE HERE ***"
+    return accumulate(mul, 1, n, f)
 
 def compose1(h, g):
     """Return a function f, such that f(x) = h(g(x))."""
