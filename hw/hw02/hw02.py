@@ -60,7 +60,11 @@ def accumulate(combiner, base, n, f):
     >>> accumulate(lambda x, y: (x + y) % 17, 19, 20, square)
     16
     """
-    "*** YOUR CODE HERE ***"
+    total = base
+    for i in range(1, n+1):
+        total = combiner(total,f(i))
+    return total
+
 
 def summation_using_accumulate(n, f):
     """Returns the sum of f(1) + ... + f(n). The implementation
