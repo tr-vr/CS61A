@@ -107,8 +107,16 @@ def make_repeater(h, n):
     152587890625
     >>> make_repeater(square, 0)(5) # Yes, it makes sense to apply the function zero times! 
     5
+
+    This seems to require a high-order function approach
     """
-    "*** YOUR CODE HERE ***"
+    def repeater(x):
+        k = 0
+        while k < n:
+            x = h(x)
+            k += 1
+        return x
+    return repeater
 
 
 ##########################
