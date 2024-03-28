@@ -110,6 +110,7 @@ def make_repeater(h, n):
 
     This seems to require a high-order function approach
     """
+
     def repeater(x):
         k = 0
         while k < n:
@@ -117,6 +118,7 @@ def make_repeater(h, n):
             k += 1
         return x
     return repeater
+
 
 
 ##########################
@@ -131,11 +133,11 @@ def successor(n):
 
 def one(f):
     """Church numeral 1: same as successor(zero)"""
-    "*** YOUR CODE HERE ***"
+    return lambda x: f(x)
 
 def two(f):
     """Church numeral 2: same as successor(successor(zero))"""
-    "*** YOUR CODE HERE ***"
+    return lambda x: f(f(x))
 
 three = successor(two)
 
